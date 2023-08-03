@@ -44,6 +44,23 @@ display: flex;
     animation: spin 2s linear infinite;
 }
 
+.card-row {
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 100%; */
+    row-gap: 100px !important;
+}
+
+
+/* In your CSS file or inline styles */
+.toggle-div {
+    background-color: grey;
+}
+
+.toggle-div.active {
+    background-color: green;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

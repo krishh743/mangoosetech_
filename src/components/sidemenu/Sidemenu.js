@@ -46,13 +46,16 @@ function ResponsiveDrawer(props) {
                         <Stack>
                         </Stack>
                         <Stack>
-                            <div onClick={handleDrawerToggle} style={{backgroundColor: "grey", width: "250px", height: "100px", borderRadius: "10px", display: "flex",cursor:"pointer"}}>
+                            <div
+                                onClick={handleDrawerToggle}
+                                className={`toggle-div ${togle === "page1" ? "active" : ""}`}
+                                style={{width: "250px", height: "100px", borderRadius: "10px", display: "flex", cursor: "pointer"}}
+                            >
                                 <div style={{backgroundColor: "green", width: "50%", height: "100%"}}>
                                     left
                                 </div>
                                 right
                             </div>
-                            <Switch size="lg"  {...label} defaultValue={togle} onClick={handleDrawerToggle} />
                         </Stack>
                     </Stack>
                 </Stack>
