@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {fetchMovies} from '../redux/MoviesSlice';
+import {fetchDetails} from '../redux/ApiService';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import {Stack} from '@mui/material';
@@ -27,11 +27,13 @@ function Details() {
     };
 
     useEffect(() => {
-        dispatch(fetchMovies());
+        dispatch(fetchDetails());
     }, [dispatch]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='kit-container'>
+            <div className='loader'>Loading...</div>
+        </div>
     }
 
     console.log(data, "movies")
@@ -95,9 +97,9 @@ function Details() {
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose}>Disagree</Button>
-                        <Button onClick={handleClose} autoFocus>
-                            Agree
+                        <Button variant='contained' onClick={handleClose}>cancel</Button>
+                        <Button variant='contained' onClick={handleClose} autoFocus>
+                            Read
                         </Button>
                     </DialogActions>
                 </Dialog>

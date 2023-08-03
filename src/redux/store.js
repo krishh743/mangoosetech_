@@ -1,10 +1,10 @@
 
 import {configureStore} from '@reduxjs/toolkit';
-import moviesReducer from './MoviesSlice';
+import detailsSlice from './ApiService';
 
 const store = configureStore({
     reducer: {
-        data: moviesReducer,
+        data: detailsSlice,
     },
 });
 

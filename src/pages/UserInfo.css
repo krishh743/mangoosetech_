@@ -14,7 +14,6 @@
 .paper-card{
 width: 1200px;
  margin-top: 30px;
-/* border: 1px solid grey; */
 border-radius: 20px;
 padding:15px;
 background-color: white;
@@ -24,4 +23,33 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
 .time-text{
 color: grey;
 margin-left: 110px;
+}
+
+.kit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loader {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #870046;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

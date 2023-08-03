@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {fetchMovies} from '../redux/MoviesSlice';
+import {fetchDetails} from '../redux/ApiService';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -13,11 +13,13 @@ function UserInfo() {
     const {data, loading, error} = useSelector((state) => state.data);
 
     useEffect(() => {
-        dispatch(fetchMovies());
+        dispatch(fetchDetails());
     }, [dispatch]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='kit-container'>
+            <div className='loader'>Loading...</div>
+        </div>
     }
 
     console.log(data, "movies")
